@@ -4,7 +4,6 @@ import "./App.css";
 
 function App() {
   const [language, setLanguage] = useState("en");
-  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const translations = {
     en: {
@@ -54,11 +53,6 @@ function App() {
       },
       contact: {
         title: "Book or Contact Us",
-        namePlaceholder: "Your Name",
-        emailPlaceholder: "Your Email",
-        messagePlaceholder: "Your Message",
-        submit: "Send Message",
-        thankYou: "Thank you! We'll be in touch soon.",
         orEmail: "Or email us at"
       },
       footer: {
@@ -116,11 +110,6 @@ function App() {
       },
       contact: {
         title: "預約或聯絡我們",
-        namePlaceholder: "您的姓名",
-        emailPlaceholder: "您的電郵",
-        messagePlaceholder: "您的訊息",
-        submit: "發送訊息",
-        thankYou: "謝謝！我們將盡快與您聯絡。",
         orEmail: "或透過電郵聯絡我們："
       },
       footer: {
@@ -134,22 +123,6 @@ function App() {
   };
 
   const text = translations[language];
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const formData = new FormData(form);
-    
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString()
-    })
-      .then(() => {
-        setFormSubmitted(true);
-      })
-      .catch((error) => alert(error));
-  };
 
   return (
     <div>
@@ -233,37 +206,17 @@ function App() {
         <section id="contact" className="contact-section">
           <h2>{text.contact.title}</h2>
           <div className="contact-form-container">
-            <form
-              name="contact"
-              method="POST"
-              data-netlify="true"
-              onSubmit={handleSubmit}
+            <iframe 
+              src="https://docs.google.com/forms/d/e/1FAIpQLSdOEDuvc2NnzsgTAWqwH3sAOw2dtOzxf_6G1GIqqQaXsY-bxQ/viewform?embedded=true" 
+              width="640" 
+              height="1641" 
+              frameBorder="0" 
+              marginHeight="0" 
+              marginWidth="0"
+              title="Contact Form"
             >
-              <input type="hidden" name="form-name" value="contact" />
-              <input
-                type="text"
-                name="name"
-                placeholder={text.contact.namePlaceholder}
-                required
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder={text.contact.emailPlaceholder}
-                required
-              />
-              <textarea
-                name="message"
-                placeholder={text.contact.messagePlaceholder}
-                required
-              ></textarea>
-              <button type="submit">{text.contact.submit}</button>
-            </form>
-            {formSubmitted && (
-              <div className="thank-you-message">
-                {text.contact.thankYou}
-              </div>
-            )}
+              Loading…
+            </iframe>
           </div>
         </section>
       </main>
