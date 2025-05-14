@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import "./App.css";
 
@@ -149,70 +148,74 @@ function App() {
 
   const text = translations[language];
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSent(true);
-  };
-
   const toggleLanguage = (lang) => {
     setLanguage(lang);
   };
 
   return (
-    <div className="App">
+    <div>
       <header>
-        <div className="logo">Enchanté</div>
-        <nav>
-          <div className="nav-links">
+        <div className="nav-content">
+          <div className="logo">Enchanté</div>
+          <nav>
             <a href="#features">{text.nav.features}</a>
             <a href="#testimonials">{text.nav.testimonials}</a>
             <a href="#contact">{text.nav.contact}</a>
-          </div>
-          <div className="language-selector">
-            <button 
-              className={language === "en" ? "active" : ""} 
-              onClick={() => toggleLanguage("en")}
-            >
-              {translations.en.languageSelector.en}
-            </button>
-            <button 
-              className={language === "zh" ? "active" : ""} 
-              onClick={() => toggleLanguage("zh")}
-            >
-              {translations.en.languageSelector.zh}
-            </button>
-          </div>
-        </nav>
+            <div className="language-selector">
+              <button 
+                className={language === "en" ? "active" : ""} 
+                onClick={() => toggleLanguage("en")}
+              >
+                {translations.en.languageSelector.en}
+              </button>
+              <button 
+                className={language === "zh" ? "active" : ""} 
+                onClick={() => toggleLanguage("zh")}
+              >
+                {translations.en.languageSelector.zh}
+              </button>
+            </div>
+          </nav>
+        </div>
       </header>
-      <main>
+      <main className="main-container">
         <section className="hero-section">
-          <div className="hero-content">
-            <h1>{text.hero.headline}</h1>
-            <p>{text.hero.desc}</p>
-            <div className="hero-highlight">{text.hero.highlight}</div>
-            <button className="cta-button">{text.hero.cta}</button>
+          <div className="hero-headline">{text.hero.headline}</div>
+          <div className="hero-desc">
+            {text.hero.desc}{" "}
+            <span
+              style={{
+                color: "var(--accent)",
+                fontWeight: "500",
+              }}
+            >
+              {text.hero.highlight}
+            </span>
+            .
           </div>
-          <div className="hero-image">
-            <img src="https://placehold.co/600x400" alt="Elegant spa interior" />
-          </div>
+          <button
+            className="cta-btn"
+            onClick={() =>
+              document.getElementById("contact").scrollIntoView()
+            }
+          >
+            {text.hero.cta}
+          </button>
         </section>
         <section id="features" className="features-section">
           <div className="features-title">{text.features.title}</div>
           <div className="features-grid">
             <div className="feature-card">
-              <div className="feature-icon">✓</div>
               <div className="feature-title">{text.features.standard.title}</div>
               <div className="feature-price">{text.features.standard.price}</div>
               <div className="feature-desc">{text.features.standard.desc}</div>
             </div>
-            <div className="feature-card highlight">
-              <div className="feature-icon">★</div>
+            <div className="feature-card">
               <div className="feature-title">{text.features.oneTime.title}</div>
               <div className="feature-price">{text.features.oneTime.price}</div>
               <div className="feature-desc">{text.features.oneTime.desc}</div>
             </div>
             <div className="feature-card">
-              <div className="feature-icon">♦</div>
               <div className="feature-title">{text.features.deepClean.title}</div>
               <div className="feature-price">{text.features.deepClean.price}</div>
               <div className="feature-desc">{text.features.deepClean.desc}</div>
@@ -221,7 +224,7 @@ function App() {
         </section>
         <section id="testimonials" className="testimonials-section">
           <div className="testimonials-title">{text.testimonials.title}</div>
-          <div className="testimonials-grid">
+          <div className="testimonial-list">
             <div className="testimonial-card">
               <div className="star-rating">★★★★★</div>
               <div className="testimonial-quote">{text.testimonials.testimonial1.quote}</div>
@@ -243,20 +246,23 @@ function App() {
           <div className="contact-title">{text.contact.title}</div>
           <div className="contact-form-container">
             {!sent ? (
-              <form className="contact-form" onSubmit={handleSubmit}>
+              <form className="contact-form" name="contact" netlify>
                 <input
                   type="text"
+                  name="name"
                   placeholder={text.contact.namePlaceholder}
                   required
                   maxLength="64"
                 />
                 <input
                   type="email"
+                  name="email"
                   placeholder={text.contact.emailPlaceholder}
                   required
                   maxLength="64"
                 />
                 <textarea
+                  name="message"
                   placeholder={text.contact.messagePlaceholder}
                   rows="4"
                   required
@@ -274,9 +280,7 @@ function App() {
           </div>
         </section>
       </main>
-      <footer>
-        &copy; {new Date().getFullYear()} {text.footer.copyright}
-      </footer>
+      <footer>&copy; {new Date().getFullYear()} {text.footer.copyright}</footer>
 
       {/* Add CSS for language selector buttons */}
       <style jsx>{`
@@ -318,4 +322,3 @@ function App() {
 }
 
 export default App;
-
