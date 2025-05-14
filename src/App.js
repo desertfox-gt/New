@@ -2,8 +2,35 @@
 import React, { useState } from "react";
 import "./App.css";
 
+function ContactPage({ language, text, onBack }) {
+  return (
+    <div className="contact-page">
+      <header className="contact-page-header">
+        <button onClick={onBack} className="back-button">
+          ← {language === "en" ? "Back" : "返回"}
+        </button>
+        <h1>{text.contact.title}</h1>
+      </header>
+      <div className="contact-form-container">
+        <iframe 
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdOEDuvc2NnzsgTAWqwH3sAOw2dtOzxf_6G1GIqqQaXsY-bxQ/viewform?embedded=true" 
+          width="640" 
+          height="1641" 
+          frameBorder="0" 
+          marginHeight="0" 
+          marginWidth="0"
+          title="Contact Form"
+        >
+          Loading…
+        </iframe>
+      </div>
+    </div>
+  );
+}
+
 function App() {
   const [language, setLanguage] = useState("en");
+  const [showContactForm, setShowContactForm] = useState(false);
 
   const translations = {
     en: {
@@ -53,7 +80,8 @@ function App() {
       },
       contact: {
         title: "Book or Contact Us",
-        orEmail: "Or email us at"
+        orEmail: "Or email us at",
+        button: "Contact Us"
       },
       footer: {
         copyright: "Enchanté • Classy, Dark Purple SPA"
@@ -110,7 +138,8 @@ function App() {
       },
       contact: {
         title: "預約或聯絡我們",
-        orEmail: "或透過電郵聯絡我們："
+        orEmail: "或透過電郵聯絡我們：",
+        button: "聯絡我們"
       },
       footer: {
         copyright: "Enchanté • 高雅，深紫色水療中心"
@@ -123,6 +152,16 @@ function App() {
   };
 
   const text = translations[language];
+
+  if (showContactForm) {
+    return (
+      <ContactPage 
+        language={language} 
+        text={text} 
+        onBack={() => setShowContactForm(false)} 
+      />
+    );
+  }
 
   return (
     <div>
@@ -205,18 +244,17 @@ function App() {
 
         <section id="contact" className="contact-section">
           <h2>{text.contact.title}</h2>
-          <div className="contact-form-container">
-            <iframe 
-              src="https://docs.google.com/forms/d/e/1FAIpQLSdOEDuvc2NnzsgTAWqwH3sAOw2dtOzxf_6G1GIqqQaXsY-bxQ/viewform?embedded=true" 
-              width="640" 
-              height="1641" 
-              frameBorder="0" 
-              marginHeight="0" 
-              marginWidth="0"
-              title="Contact Form"
+          <div className="contact-content">
+            <button 
+              className="contact-button"
+              onClick={() => setShowContactForm(true)}
             >
-              Loading…
-            </iframe>
+              {text.contact.button}
+            </button>
+            <p className="email-info">
+              {text.contact.orEmail}{" "}
+              <a href="mailto:studyib21@gmail.com">studyib21@gmail.com</a>
+            </p>
           </div>
         </section>
       </main>
