@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 
 // Icons as React components for simplicity
@@ -20,9 +21,7 @@ function ContactForm() {
   };
 
   return sent ? (
-    <div style={{ color: "#0097a7", padding: 12 }}>
-      Thank you for reaching out! We'll get back to you soon.
-    </div>
+    <div style={{ color: "#0097a7", padding: 12 }}>Thank you for reaching out! We'll get back to you soon.</div>
   ) : (
     <form onSubmit={handleSubmit} autoComplete="off">
       <input
@@ -53,7 +52,15 @@ function ContactForm() {
       />
       <button
         type="submit"
-        style={{ background: "#0097a7", color: "#fff", border: "none", borderRadius: 6, padding: "10px 18px", cursor: "pointer", fontWeight: "bold" }}
+        style={{
+          background: "#0097a7",
+          color: "#fff",
+          border: "none",
+          borderRadius: 6,
+          padding: "10px 18px",
+          cursor: "pointer",
+          fontWeight: "bold"
+        }}
       >
         Send
       </button>
@@ -87,37 +94,87 @@ function App() {
       </header>
 
       {/* Why Choose Us */}
-      <section style={{
+      <section
+        style={{
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "center",
           gap: 24,
           marginTop: 40,
           marginBottom: 40
-        }}>
-        <div style={{ background: "#fff", borderRadius: 12, padding: 18, width: 270, marginBottom: 16, textAlign: "center", boxShadow: "0 0 10px #b2ebf2" }}>
-          <Home /><br />
+        }}
+      >
+        <div
+          style={{
+            background: "#fff",
+            borderRadius: 12,
+            padding: 18,
+            width: 270,
+            marginBottom: 16,
+            textAlign: "center",
+            boxShadow: "0 0 10px #b2ebf2"
+          }}
+        >
+          <Home />
+          <br />
           <h3 style={{ margin: 0, fontWeight: "bold" }}>Trusted & Vetted</h3>
           <p>Our cleaners are background checked, trained, and reviewed after every job.</p>
         </div>
-        <div style={{ background: "#fff", borderRadius: 12, padding: 18, width: 270, marginBottom: 16, textAlign: "center", boxShadow: "0 0 10px #b2ebf2" }}>
-          <Sparkles /><br />
+        <div
+          style={{
+            background: "#fff",
+            borderRadius: 12,
+            padding: 18,
+            width: 270,
+            marginBottom: 16,
+            textAlign: "center",
+            boxShadow: "0 0 10px #b2ebf2"
+          }}
+        >
+          <Sparkles />
+          <br />
           <h3 style={{ margin: 0, fontWeight: "bold" }}>Quality Yet Affordable</h3>
           <p>Trusted hourly cleaners at prices you can afford—peace of mind, and a clean home.</p>
         </div>
-        <div style={{ background: "#fff", borderRadius: 12, padding: 18, width: 270, marginBottom: 16, textAlign: "center", boxShadow: "0 0 10px #b2ebf2" }}>
-          <Mail /><br />
+        <div
+          style={{
+            background: "#fff",
+            borderRadius: 12,
+            padding: 18,
+            width: 270,
+            marginBottom: 16,
+            textAlign: "center",
+            boxShadow: "0 0 10px #b2ebf2"
+          }}
+        >
+          <Mail />
+          <br />
           <h3 style={{ margin: 0, fontWeight: "bold" }}>Book Instantly</h3>
-          <p>Quick booking, fast confirmation.<br />Minimum just 2 hours per session.</p>
+          <p>
+            Quick booking, fast confirmation.
+            <br />
+            Minimum just 2 hours per session.
+          </p>
         </div>
       </section>
 
       {/* Pricing */}
       <section style={{ maxWidth: 800, margin: "0 auto", padding: "0 1em" }}>
-        <h2 style={{ fontSize: "2em", fontWeight: "bold", textAlign: "center", color: "#0097a7" }}>Our Packages</h2>
-        <div style={{ display: "flex", gap: 24, flexWrap: "wrap", justifyContent: "center", marginTop: 16 }}>
+        <h2 style={{ fontSize: "2em", fontWeight: "bold", textAlign: "center", color: "#0097a7" }}>
+          Our Packages
+        </h2>
+        <div
+          style={{
+            display: "flex",
+            gap: 24,
+            flexWrap: "wrap",
+            justifyContent: "center",
+            marginTop: 16
+          }}
+        >
           {pricing.map((plan) => (
-            <div key={plan.name}
+            <div
+              key={plan.name}
               style={{
                 border: plan.highlight ? "3px solid #0097a7" : "2px solid #b2ebf2",
                 borderRadius: 18,
@@ -139,9 +196,29 @@ function App() {
       {/* Testimonials */}
       <section style={{ maxWidth: 700, margin: "40px auto", padding: 0 }}>
         <h2 style={{ textAlign: "center", fontSize: "1.6em", color: "#0097a7" }}>What People Say</h2>
-        <div style={{ display: "flex", gap: 18, flexWrap: "wrap", justifyContent: "center", marginTop: 14 }}>
+        <div
+          style={{
+            display: "flex",
+            gap: 18,
+            flexWrap: "wrap",
+            justifyContent: "center",
+            marginTop: 14
+          }}
+        >
           {testimonials.map((t, i) => (
-            <div key={i} style={{ background: "#fff", minHeight: 110, borderRadius: 16, padding: 20, boxShadow: "0 0 8px #b2ebf2", flex: '1 1 220px', maxWidth: 230, marginBottom: 16 }}>
+            <div
+              key={i}
+              style={{
+                background: "#fff",
+                minHeight: 110,
+                borderRadius: 16,
+                padding: 20,
+                boxShadow: "0 0 8px #b2ebf2",
+                flex: "1 1 220px",
+                maxWidth: 230,
+                marginBottom: 16
+              }}
+            >
               <div style={{ color: "#00bcd4", marginBottom: 12, fontSize: "2.2em" }}>&quot;</div>
               <blockquote style={{ fontStyle: "italic" }}>{t.text}</blockquote>
               <div style={{ fontWeight: "bold", color: "#0097a7", marginTop: 12 }}>{t.name}</div>
@@ -152,11 +229,26 @@ function App() {
 
       {/* Contact */}
       <section id="contact" style={{ background: "#00bcd4", padding: "3em 0", color: "#fff" }}>
-        <h2 style={{ textAlign: "center", fontSize: "2em", fontWeight: "bold" }}>Book a Cleaning or Ask a Question</h2>
-        <div style={{ background: "#fff", borderRadius: 18, margin: "2em auto 0 auto", color: "#111", boxShadow: "0 0 16px #0097a7", maxWidth: 410, padding: 32 }}>
+        <h2 style={{ textAlign: "center", fontSize: "2em", fontWeight: "bold" }}>
+          Book a Cleaning or Ask a Question
+        </h2>
+        <div
+          style={{
+            background: "#fff",
+            borderRadius: 18,
+            margin: "2em auto 0 auto",
+            color: "#111",
+            boxShadow: "0 0 16px #0097a7",
+            maxWidth: 410,
+            padding: 32
+          }}
+        >
           <ContactForm />
           <div style={{ color: "#888", fontSize: 14, textAlign: "center", marginTop: 10 }}>
-            Or email us at <a href="mailto:info@sparklean.com" style={{ color: "#00bcd4", textDecoration: "underline" }}>info@sparklean.com</a>
+            Or email us at{" "}
+            <a href="mailto:info@sparklean.com" style={{ color: "#00bcd4", textDecoration: "underline" }}>
+              info@sparklean.com
+            </a>
           </div>
         </div>
       </section>
@@ -170,3 +262,4 @@ function App() {
 }
 
 export default App;
+
