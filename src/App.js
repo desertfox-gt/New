@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import "./App.css";
 
+// Subpage for Google Form Contact
 function ContactPage({ language, text, onBack }) {
   return (
     <div className="contact-page">
@@ -28,9 +29,64 @@ function ContactPage({ language, text, onBack }) {
   );
 }
 
+// Subpage for Service Comparison
+function ServiceComparisonPage({ language, text, onBack }) {
+  // Service comparison data per language
+  const rows = [
+    {
+      label: language === "en" ? "Price" : "價格",
+      values: [
+        text.features.standard.price,
+        text.features.oneTime.price,
+        text.features.deepClean.price
+      ]
+    },
+    {
+      label: language === "en" ? "Description" : "描述",
+      values: [
+        text.features.standard.desc,
+        text.features.oneTime.desc,
+        text.features.deepClean.desc
+      ]
+    }
+  ];
+
+  return (
+    <div className="comparison-page">
+      <header className="comparison-page-header">
+        <button onClick={onBack} className="back-button">
+          ← {language === "en" ? "Back" : "返回"}
+        </button>
+        <h1>{language === "en" ? "Service Comparison" : "服務比較"}</h1>
+      </header>
+      <table className="comparison-table">
+        <thead>
+          <tr>
+            <th>{language === "en" ? " " : " "}</th>
+            <th>{text.features.standard.title}</th>
+            <th>{text.features.oneTime.title}</th>
+            <th>{text.features.deepClean.title}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row, i) => (
+            <tr key={i}>
+              <td><strong>{row.label}</strong></td>
+              {row.values.map((cell, j) => (
+                <td key={j}>{cell}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 function App() {
   const [language, setLanguage] = useState("en");
   const [showContactForm, setShowContactForm] = useState(false);
+  const [showComparisonPage, setShowComparisonPage] = useState(false);
 
   const translations = {
     en: {
@@ -153,15 +209,24 @@ function App() {
 
   const text = translations[language];
 
-  if (showContactForm) {
+  // Subpage routing
+  if (showContactForm)
     return (
-      <ContactPage 
-        language={language} 
-        text={text} 
-        onBack={() => setShowContactForm(false)} 
+      <ContactPage
+        language={language}
+        text={text}
+        onBack={() => setShowContactForm(false)}
       />
     );
-  }
+
+  if (showComparisonPage)
+    return (
+      <ServiceComparisonPage
+        language={language}
+        text={text}
+        onBack={() => setShowComparisonPage(false)}
+      />
+    );
 
   return (
     <div>
@@ -181,14 +246,14 @@ function App() {
               {text.nav.contact}
             </a>
             <div className="language-selector">
-              <button 
-                className={language === "en" ? "active" : ""} 
+              <button
+                className={language === "en" ? "active" : ""}
                 onClick={() => setLanguage("en")}
               >
                 {translations.en.languageSelector.en}
               </button>
-              <button 
-                className={language === "zh" ? "active" : ""} 
+              <button
+                className={language === "zh" ? "active" : ""}
                 onClick={() => setLanguage("zh")}
               >
                 {translations.en.languageSelector.zh}
@@ -197,7 +262,6 @@ function App() {
           </nav>
         </div>
       </header>
-
       <main>
         <section className="hero-section">
           <div className="hero-content">
@@ -207,28 +271,31 @@ function App() {
             <button className="cta-btn">{text.hero.cta}</button>
           </div>
         </section>
-
         <section id="features" className="features-section">
           <h2>{text.features.title}</h2>
           <div className="features-grid">
-            <div className="feature-card">
-              <h3 className="feature-title">{text.features.standard.title}</h3>
-              <p className="feature-price">{text.features.standard.price}</p>
-              <p className="feature-desc">{text.features.standard.desc}</p>
-            </div>
-            <div className="feature-card">
-              <h3 className="feature-title">{text.features.oneTime.title}</h3>
-              <p className="feature-price">{text.features.oneTime.price}</p>
-              <p className="feature-desc">{text.features.oneTime.desc}</p>
-            </div>
-            <div className="feature-card">
-              <h3 className="feature-title">{text.features.deepClean.title}</h3>
-              <p className="feature-price">{text.features.deepClean.price}</p>
-              <p className="feature-desc">{text.features.deepClean.desc}</p>
-            </div>
+            {["standard", "oneTime", "deepClean"].map(type => (
+              <div
+                key={type}
+                className="feature-card"
+                onClick={() => setShowComparisonPage(true)}
+                style={{ cursor: "pointer" }}
+                tabIndex={0}
+                aria-label={`\${text.features[type].title} card. Click for comparison.`}
+                onKeyPress={e => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    setShowComparisonPage(true);
+                  }
+                }}
+                role="button"
+              >
+                <h3 className="feature-title">{text.features[type].title}</h3>
+                <p className="feature-price">{text.features[type].price}</p>
+                <p className="feature-desc">{text.features[type].desc}</p>
+              </div>
+            ))}
           </div>
         </section>
-
         <section id="testimonials" className="testimonials-section">
           <h2 className="testimonials-title">{text.testimonials.title}</h2>
           <div className="testimonials-grid">
@@ -249,24 +316,21 @@ function App() {
             </div>
           </div>
         </section>
-
         <section id="contact" className="contact-section">
           <h2 className="contact-title">{text.contact.title}</h2>
           <div className="contact-content">
-            <button 
+            <button
               className="contact-button"
               onClick={() => setShowContactForm(true)}
             >
               {text.contact.button}
             </button>
             <p className="email-info">
-              {text.contact.orEmail}{" "}
-              <a href="mailto:studyib21@gmail.com">studyib21@gmail.com</a>
+              {text.contact.orEmail} <a href="mailto:studyib21@gmail.com">studyib21@gmail.com</a>
             </p>
           </div>
         </section>
       </main>
-
       <footer>
         <p>&copy; {new Date().getFullYear()} {text.footer.copyright}</p>
       </footer>
