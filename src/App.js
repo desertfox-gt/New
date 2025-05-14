@@ -69,9 +69,9 @@ function ContactForm() {
 }
 
 const pricing = [
-  { name: "Standard", price: "\$24/hr", description: "Recurring Weekly or Biweekly", highlight: false },
-  { name: "One-time", price: "\$30/hr", description: "Just one session, no commitment", highlight: true },
-  { name: "Deep Clean", price: "\$40/hr", description: "Intensive top-to-bottom clean", highlight: false }
+  { name: "Standard", price: "HKD24/hr", description: "Recurring Weekly or Biweekly", highlight: false },
+  { name: "One-time", price: "HKD30/hr", description: "Just one session, no commitment", highlight: true },
+  { name: "Deep Clean", price: "HKD40/hr", description: "Intensive top-to-bottom clean", highlight: false }
 ];
 
 const testimonials = [
