@@ -1,9 +1,16 @@
+
 import React, { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [sent, setSent] = useState(false);
   const [language, setLanguage] = useState("en"); // "en" for English, "zh" for Traditional Chinese
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    // Let the form submit normally for Netlify to process
+    // Just set our state to show the thank you message
+    setFormSubmitted(true);
+  };
 
   const translations = {
     en: {
@@ -245,8 +252,15 @@ function App() {
         <section id="contact" className="contact-section">
           <div className="contact-title">{text.contact.title}</div>
           <div className="contact-form-container">
-            {!sent ? (
-              <form className="contact-form" name="contact" netlify>
+            {!formSubmitted ? (
+              <form 
+                className="contact-form" 
+                name="contact" 
+                method="POST" 
+                data-netlify="true"
+                onSubmit={handleSubmit}
+              >
+                <input type="hidden" name="form-name" value="contact" />
                 <input
                   type="text"
                   name="name"
@@ -322,3 +336,4 @@ function App() {
 }
 
 export default App;
+
