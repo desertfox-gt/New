@@ -171,7 +171,15 @@ function App() {
           <nav>
             <a href="#features">{text.nav.features}</a>
             <a href="#testimonials">{text.nav.testimonials}</a>
-            <a href="#contact">{text.nav.contact}</a>
+            <a
+              href="#contact"
+              onClick={e => {
+                e.preventDefault();
+                setShowContactForm(true);
+              }}
+            >
+              {text.nav.contact}
+            </a>
             <div className="language-selector">
               <button 
                 className={language === "en" ? "active" : ""} 
@@ -193,10 +201,10 @@ function App() {
       <main>
         <section className="hero-section">
           <div className="hero-content">
-            <h1>{text.hero.headline}</h1>
-            <p>{text.hero.desc}</p>
+            <h1 className="hero-headline">{text.hero.headline}</h1>
+            <p className="hero-desc">{text.hero.desc}</p>
             <div className="hero-highlight">{text.hero.highlight}</div>
-            <button className="cta-button">{text.hero.cta}</button>
+            <button className="cta-btn">{text.hero.cta}</button>
           </div>
         </section>
 
@@ -204,46 +212,46 @@ function App() {
           <h2>{text.features.title}</h2>
           <div className="features-grid">
             <div className="feature-card">
-              <h3>{text.features.standard.title}</h3>
-              <p className="price">{text.features.standard.price}</p>
-              <p>{text.features.standard.desc}</p>
+              <h3 className="feature-title">{text.features.standard.title}</h3>
+              <p className="feature-price">{text.features.standard.price}</p>
+              <p className="feature-desc">{text.features.standard.desc}</p>
             </div>
             <div className="feature-card">
-              <h3>{text.features.oneTime.title}</h3>
-              <p className="price">{text.features.oneTime.price}</p>
-              <p>{text.features.oneTime.desc}</p>
+              <h3 className="feature-title">{text.features.oneTime.title}</h3>
+              <p className="feature-price">{text.features.oneTime.price}</p>
+              <p className="feature-desc">{text.features.oneTime.desc}</p>
             </div>
             <div className="feature-card">
-              <h3>{text.features.deepClean.title}</h3>
-              <p className="price">{text.features.deepClean.price}</p>
-              <p>{text.features.deepClean.desc}</p>
+              <h3 className="feature-title">{text.features.deepClean.title}</h3>
+              <p className="feature-price">{text.features.deepClean.price}</p>
+              <p className="feature-desc">{text.features.deepClean.desc}</p>
             </div>
           </div>
         </section>
 
         <section id="testimonials" className="testimonials-section">
-          <h2>{text.testimonials.title}</h2>
+          <h2 className="testimonials-title">{text.testimonials.title}</h2>
           <div className="testimonials-grid">
             <div className="testimonial-card">
               <div className="star-rating">★★★★★</div>
-              <p>{text.testimonials.testimonial1.quote}</p>
-              <cite>{text.testimonials.testimonial1.author}</cite>
+              <p className="testimonial-quote">{text.testimonials.testimonial1.quote}</p>
+              <span className="testimonial-author">{text.testimonials.testimonial1.author}</span>
             </div>
             <div className="testimonial-card">
               <div className="star-rating">★★★★★</div>
-              <p>{text.testimonials.testimonial2.quote}</p>
-              <cite>{text.testimonials.testimonial2.author}</cite>
+              <p className="testimonial-quote">{text.testimonials.testimonial2.quote}</p>
+              <span className="testimonial-author">{text.testimonials.testimonial2.author}</span>
             </div>
             <div className="testimonial-card">
               <div className="star-rating">★★★★★</div>
-              <p>{text.testimonials.testimonial3.quote}</p>
-              <cite>{text.testimonials.testimonial3.author}</cite>
+              <p className="testimonial-quote">{text.testimonials.testimonial3.quote}</p>
+              <span className="testimonial-author">{text.testimonials.testimonial3.author}</span>
             </div>
           </div>
         </section>
 
         <section id="contact" className="contact-section">
-          <h2>{text.contact.title}</h2>
+          <h2 className="contact-title">{text.contact.title}</h2>
           <div className="contact-content">
             <button 
               className="contact-button"
