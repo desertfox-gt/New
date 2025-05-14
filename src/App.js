@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import './App.css';
+
+import React, { useState } from "react";
+import "./App.css";
 
 function App() {
   const [sent, setSent] = useState(false);
@@ -26,12 +27,24 @@ function App() {
         <section className="hero-section">
           <div className="hero-headline">Class & Comfort, Elevated</div>
           <div className="hero-desc">
-            Experience a new standard of elegance <br /> with our premium service. 
-            <span style={{color: 'var(--accent)', fontWeight: '500'}}>
+            Experience a new standard of elegance <br /> with our premium
+            service.{" "}
+            <span
+              style={{
+                color: "var(--accent)",
+                fontWeight: "500",
+              }}
+            >
               Welcome to class reimagined
-            </span>.
+            </span>
+            .
           </div>
-          <button className="cta-btn" onClick={() => document.getElementById('contact').scrollIntoView()}>
+          <button
+            className="cta-btn"
+            onClick={() =>
+              document.getElementById("contact").scrollIntoView()
+            }
+          >
             Get Started
           </button>
         </section>
@@ -41,23 +54,26 @@ function App() {
           <div className="features-grid">
             <div className="feature-card">
               <div className="feature-title">Standard</div>
-              <div className="feature-price">HKD24/hr</div>
+              <div className="feature-price">HKD120/hr</div>
               <div className="feature-desc">
-                Recurring weekly or biweekly cleaning for perfect comfort and consistency.
+                Recurring weekly or biweekly cleaning for perfect comfort and
+                consistency.
               </div>
             </div>
             <div className="feature-card">
               <div className="feature-title">One-time</div>
-              <div className="feature-price">HKD30/hr</div>
+              <div className="feature-price">HKD130/hr</div>
               <div className="feature-desc">
-                Single session, no commitment. Flexible, fast, instantly available for when you need it most.
+                Single session, no commitment. Flexible, fast, instantly
+                available for when you need it most.
               </div>
             </div>
             <div className="feature-card">
               <div className="feature-title">Deep Clean</div>
-              <div className="feature-price">HKD40/hr</div>
+              <div className="feature-price">HKD170/hr</div>
               <div className="feature-desc">
-                Intensive top-to-bottom treatment for a spotless and rejuvenated environment.
+                Intensive top-to-bottom treatment for a spotless and
+                rejuvenated environment.
               </div>
             </div>
           </div>
@@ -69,21 +85,24 @@ function App() {
             <div className="testimonial-card">
               <div className="star-rating">★★★★★</div>
               <div className="testimonial-quote">
-                Super easy to book and our house feels amazing! Service is truly a cut above.
+                Super easy to book and our house feels amazing! Service is truly a
+                cut above.
               </div>
               <div className="testimonial-author">Jamie L.</div>
             </div>
             <div className="testimonial-card">
               <div className="star-rating">★★★★★</div>
               <div className="testimonial-quote">
-                The deep clean left my space sparkling—I've never seen it so radiant!
+                The deep clean left my space sparkling—I've never seen it so
+                radiant!
               </div>
               <div className="testimonial-author">Sean W.</div>
             </div>
             <div className="testimonial-card">
               <div className="star-rating">★★★★★</div>
               <div className="testimonial-quote">
-                Professional, punctual, and beautiful results. Highly recommended.
+                Professional, punctual, and beautiful results. Highly
+                recommended.
               </div>
               <div className="testimonial-author">Grace K.</div>
             </div>
@@ -95,22 +114,22 @@ function App() {
           <div className="contact-form-container">
             {!sent ? (
               <form className="contact-form" onSubmit={handleSubmit}>
-                <input 
-                  type="text" 
-                  placeholder="Your Name" 
-                  required 
-                  maxLength="64" 
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  required
+                  maxLength="64"
                 />
-                <input 
-                  type="email" 
-                  placeholder="Your Email" 
-                  required 
-                  maxLength="64" 
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  required
+                  maxLength="64"
                 />
-                <textarea 
-                  placeholder="Your Message" 
-                  rows="4" 
-                  required 
+                <textarea
+                  placeholder="Your Message"
+                  rows="4"
+                  required
                   maxLength="480"
                 />
                 <button type="submit">Send Message</button>
@@ -121,7 +140,8 @@ function App() {
               </div>
             )}
             <div className="contact-info">
-              Or email us at <a href="mailto:info@enchante.com">info@enchante.com</a>
+              Or email us at{" "}
+              <a href="mailto:studyib21@gmail.com">studyib21@gmail.com</a>
             </div>
           </div>
         </section>
@@ -135,3 +155,4 @@ function App() {
 }
 
 export default App;
+
