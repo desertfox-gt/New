@@ -186,6 +186,73 @@ nav a:hover {
   line-height: 1.6;
 }
 
+/* Comparison Section */
+.comparison-section {
+  padding: 4em 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.comparison-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5em;
+  text-align: center;
+  color: var(--accent);
+  margin-bottom: 1.5em;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 1.5em;
+  text-align: left;
+  border-bottom: 1px solid rgba(224, 179, 255, 0.2);
+}
+
+.comparison-table th {
+  background: var(--deep-purple);
+  color: var(--accent);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2em;
+}
+
+.comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+.comparison-table td {
+  color: var(--white);
+}
+
+.comparison-table td:first-child {
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.comparison-check {
+  color: var(--highlight);
+  font-size: 1.2em;
+}
+
+.comparison-x {
+  color: #ff6b6b;
+  font-size: 1.2em;
+}
+
+.price-highlight {
+  color: var(--highlight);
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
 /* Testimonials Section */
 .testimonials-section {
   background: var(--surface);
@@ -266,7 +333,7 @@ nav a:hover {
   color: var(--accent);
 }
 
-.contact-info a, .email-info a  {
+.contact-info a, .email-info a {
   color: var(--highlight);
   text-decoration: none;
 }
@@ -275,7 +342,7 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Old Contact Form (if any) */
+/* Contact Form */
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -310,7 +377,7 @@ nav a:hover {
   padding: 2em;
 }
 
-/* NEW: Separate Contact Page Styles for Google Form */
+/* Contact Page Styles */
 .contact-page {
   min-height: 100vh;
   background-color: var(--primary-bg);
@@ -375,15 +442,6 @@ nav a:hover {
   color: var(--accent);
 }
 
-.email-info a {
-  color: var(--highlight);
-  text-decoration: none;
-}
-
-.email-info a:hover {
-  text-decoration: underline;
-}
-
 .contact-form-container iframe {
   width: 100%;
   min-height: 800px;
@@ -393,6 +451,7 @@ nav a:hover {
   box-shadow: var(--card-shadow);
 }
 
+/* Responsive Styles */
 @media (max-width: 820px) {
   .nav-content, .features-section, .testimonials-section, .contact-form-container, .contact-page-header {
     padding-left: 10px;
@@ -406,6 +465,12 @@ nav a:hover {
   .features-section, .testimonials-section, .contact-section {
     padding: 2em 6px;
   }
+
+  .comparison-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
 }
 
 @media (max-width: 768px) {
@@ -413,28 +478,43 @@ nav a:hover {
     flex-direction: column;
     text-align: center;
   }
+
   nav {
     margin-top: 1em;
   }
+
   nav a {
     margin: 0 1em;
   }
+
   .hero-headline {
     font-size: 2.0em;
   }
+
   .features-grid, .testimonial-list, .testimonials-grid {
     grid-template-columns: 1fr;
   }
+
   .contact-page-header {
     gap: 8px;
     padding-left: 0;
     padding-right: 0;
   }
+
   .contact-form-container iframe {
     min-width: 0;
     width: 100%;
     min-height: 1200px;
-    /* For mobile forms, increase the height as needed */
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 1em;
+    font-size: 0.9em;
+  }
+
+  .comparison-title {
+    font-size: 2em;
   }
 }
 
