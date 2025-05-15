@@ -98,7 +98,10 @@ function ServiceComparisonPage({ language, text, onBack }) {
 }
 
 function App() {
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState(() => {
+    const browserLanguage = navigator.language || navigator.userLanguage;
+    return browserLanguage.startsWith("zh") ? "zh" : "en";
+  });
   const [showContactForm, setShowContactForm] = useState(false);
   const [showComparisonPage, setShowComparisonPage] = useState(false);
 
