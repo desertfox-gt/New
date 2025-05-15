@@ -247,8 +247,8 @@ function App() {
     );
 
   return (
-    <div>
-      <header>
+    <div className="app">
+      <header className="app-header">
         <div className="nav-content">
           <div className="logo">Enchanté</div>
           <nav>
@@ -281,7 +281,7 @@ function App() {
           </nav>
         </div>
       </header>
-      <main>
+      <main className="app-main">
         <section className="hero-section">
           <div className="hero-content">
             <h1 className="hero-headline">{text.hero.headline}</h1>
@@ -361,7 +361,7 @@ function App() {
           </div>
         </section>
       </main>
-      <footer>
+      <footer className="app-footer">
         <p>
           &copy; {new Date().getFullYear()} {text.footer.copyright}
         </p>
