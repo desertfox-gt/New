@@ -185,7 +185,7 @@ function App() {
       },
       birthdayPopup: {
         title: "Happy Birthday to Us!",
-        message: "\$20 Discount Coupon - Limited Time! Celebrating giving back to our customers. Limited to first 10 customers only!",
+        message: "$20 Discount Coupon - Limited Time! Celebrating giving back to our customers. Limited to first 10 customers only!",
       },
     },
     zh: {
@@ -226,7 +226,7 @@ function App() {
       },
       birthdayPopup: {
         title: "祝我們生日快樂！",
-        message: "\$20 Discount Coupon - Limited Time! Celebrating giving back to our customers. Limited to first 10 customers only!",
+        message: "$20 Discount Coupon - Limited Time! Celebrating giving back to our customers. Limited to first 10 customers only!",
       },
     },
   };
