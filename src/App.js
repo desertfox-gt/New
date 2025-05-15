@@ -128,20 +128,20 @@ function App() {
           desc: "Intensive top-to-bottom treatment for a spotless and rejuvenated environment.",
         },
       },
-      testimonials: {
-        title: "Testimonials",
-        testimonial1: {
-          quote: "Super easy to book and our house feels amazing! Service is truly a cut above.",
-          author: "Jamie L.",
+      whyChooseUs: {
+        title: "Why Choose Us?",
+        reason1: {
+          title: "Upfront Pricing",
+          desc: "What you see is what you pay. No hidden fees, ever.",
         },
-        testimonial2: {
-          quote:
-            "The deep clean left my space sparkling—I've never seen it so radiant!",
-          author: "Sean W.",
+        reason2: {
+          title: "Quality Guarantee*",
+          desc: "Your satisfaction is our priority. Only pay if you're completely satisfied.*",
+          asteriskNote: "*Terms and conditions apply.",
         },
-        testimonial3: {
-          quote: "Professional, punctual, and beautiful results. Highly recommended.",
-          author: "Grace K.",
+        reason3: {
+          title: "Referral Discounts",
+          desc: "Get up to 25% off for referring friends and family!",
         },
       },
       contact: {
@@ -187,19 +187,20 @@ function App() {
           desc: "從上到下的密集處理，打造無瑕且煥然一新的環境。",
         },
       },
-      testimonials: {
-        title: "客戶評價",
-        testimonial1: {
-          quote: "預約超級簡單，我們的家感覺棒極了！服務真的非常出色。",
-          author: "Jamie L.",
+      whyChooseUs: {
+        title: "為什麼選擇我們？",
+        reason1: {
+          title: "前期定價",
+          desc: "你看到的就是你支付的。絕無隱藏費用。",
         },
-        testimonial2: {
-          quote: "深度清潔讓我的空間煥然一新—我從未見過它如此明亮！",
-          author: "Sean W.",
+        reason2: {
+          title: "質量保證*",
+          desc: "您的滿意是我們的首要任務。只有在您完全滿意的情況下才付款。*",
+          asteriskNote: "*適用條款及細則。",
         },
-        testimonial3: {
-          quote: "專業、準時，而且結果美不勝收。強烈推薦。",
-          author: "Grace K.",
+        reason3: {
+          title: "推薦折扣",
+          desc: "推薦朋友和家人，即可享受高達 25% 的折扣！",
         },
       },
       contact: {
@@ -244,7 +245,8 @@ function App() {
           <div className="logo">Enchanté</div>
           <nav>
             <a href="#features">{text.nav.features}</a>
-            <a href="#testimonials">{text.nav.testimonials}</a>
+            
+            <a href="#why-choose-us">Why Choose Us?</a>
             <a
               href="#contact"
               onClick={(e) => {
@@ -305,35 +307,36 @@ function App() {
             ))}
           </div>
         </section>
-        <section id="testimonials" className="testimonials-section">
-          <h2 className="testimonials-title">{text.testimonials.title}</h2>
-          <div className="testimonials-grid">
-            <div className="testimonial-card">
-              <div className="star-rating">★★★★★</div>
-              <p className="testimonial-quote">
-                {text.testimonials.testimonial1.quote}
+        
+        <section id="why-choose-us" className="why-choose-us-section">
+          <h2 className="why-choose-us-title">{text.whyChooseUs.title}</h2>
+          <div className="why-choose-us-grid">
+            <div className="why-choose-us-card">
+              <h3 className="why-choose-us-title">
+                {text.whyChooseUs.reason1.title}
+              </h3>
+              <p className="why-choose-us-desc">
+                {text.whyChooseUs.reason1.desc}
               </p>
-              <span className="testimonial-author">
-                {text.testimonials.testimonial1.author}
-              </span>
             </div>
-            <div className="testimonial-card">
-              <div className="star-rating">★★★★★</div>
-              <p className="testimonial-quote">
-                {text.testimonials.testimonial2.quote}
+            <div className="why-choose-us-card">
+              <h3 className="why-choose-us-title">
+                {text.whyChooseUs.reason2.title}
+              </h3>
+              <p className="why-choose-us-desc">
+                {text.whyChooseUs.reason2.desc}
               </p>
-              <span className="testimonial-author">
-                {text.testimonials.testimonial2.author}
-              </span>
+              <p className="asterisk-note">
+                {text.whyChooseUs.reason2.asteriskNote}
+              </p>
             </div>
-            <div className="testimonial-card">
-              <div className="star-rating">★★★★★</div>
-              <p className="testimonial-quote">
-                {text.testimonials.testimonial3.quote}
+            <div className="why-choose-us-card">
+              <h3 className="why-choose-us-title">
+                {text.whyChooseUs.reason3.title}
+              </h3>
+              <p className="why-choose-us-desc">
+                {text.whyChooseUs.reason3.desc}
               </p>
-              <span className="testimonial-author">
-                {text.testimonials.testimonial3.author}
-              </span>
             </div>
           </div>
         </section>
