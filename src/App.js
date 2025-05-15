@@ -4,12 +4,11 @@ import "./App.css";
 
 // Reusable Button Component
 const Button = ({ onClick, children, className }) => (
-  <button className={`button \${className}`} onClick={onClick}>
+  <button className={`button \${className || ""}`} onClick={onClick}>
     {children}
   </button>
 );
 
-// Subpage for Google Form Contact
 function ContactPage({ language, text, onBack }) {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -40,7 +39,6 @@ function ContactPage({ language, text, onBack }) {
   );
 }
 
-// Subpage for Service Comparison
 function ServiceComparisonPage({ language, text, onBack }) {
   const rows = [
     {
@@ -95,6 +93,48 @@ function ServiceComparisonPage({ language, text, onBack }) {
   );
 }
 
+// Birthday Popup with Confetti and Book Now Button
+function BirthdayPopup({ onClose, language, onBookNow, text }) {
+  return (
+    <div className="birthday-popup">
+      <div className="confetti">
+        {[...Array(70)].map((_, i) => (
+          <div
+            key={i}
+            className="confetti-piece"
+            style={{
+              left: `\${Math.random() * 100}vw`,
+              animationDuration: `\${Math.random() * 1.5 + 3.5}s`,
+              backgroundColor:
+                i % 5 === 0
+                  ? "#f1faee"
+                  : i % 2 === 0
+                  ? "#a8dadc"
+                  : "#e63946",
+              opacity: `\${Math.random() * 0.6 + 0.4}`,
+              transform: `scale(\${Math.random() * 0.6 + 0.7})`,
+            }}
+          ></div>
+        ))}
+      </div>
+      <div className="popup-content">
+        <button className="close-button" onClick={onClose}>
+          &times;
+        </button>
+        <h2>{text.birthdayPopup.title}</h2>
+        <p>{text.birthdayPopup.message}</p>
+        <Button
+          className="book-now-btn"
+          onClick={onBookNow}
+          style={{ marginTop: "2rem" }}
+        >
+          {language === "en" ? "Book Now!" : "立刻預約!"}
+        </Button>
+      </div>
+    </div>
+  );
+}
+
 function App() {
   const [language, setLanguage] = useState(() => {
     const browserLanguage = navigator.language || navigator.userLanguage;
@@ -105,12 +145,9 @@ function App() {
   const [showBirthdayPopup, setShowBirthdayPopup] = useState(false);
 
   useEffect(() => {
-    // Show birthday popup after 3 seconds
     const timer = setTimeout(() => {
       setShowBirthdayPopup(true);
     }, 3000);
-
-    // Clear the timeout if the component unmounts
     return () => clearTimeout(timer);
   }, []);
 
@@ -167,7 +204,7 @@ function App() {
         button: "Contact Us",
       },
       footer: {
-        copyright: "Enchanté • By THE KOC GROUP",
+        copyright: "Enchanté • Classy, Dark Purple SPA",
       },
       languageSelector: {
         en: "English",
@@ -176,7 +213,7 @@ function App() {
       birthdayPopup: {
         title: "Happy Birthday to Us!",
         message:
-          "First time customers may enjoy a $20 Discount Coupon on us! - Limited to first 10 customers only!",
+          "\$20 Discount Coupon - Limited Time! Celebrating giving back to our customers. Limited to first 10 customers only!",
       },
     },
     zh: {
@@ -231,7 +268,7 @@ function App() {
         button: "聯絡我們",
       },
       footer: {
-        copyright: "Enchanté",
+        copyright: "Enchanté • 高雅，深紫色水療中心",
       },
       languageSelector: {
         en: "English",
@@ -240,14 +277,13 @@ function App() {
       birthdayPopup: {
         title: "祝我們生日快樂！",
         message:
-          "首次客戶可專享$20 優惠券 - 只限頭十名客戶！",
+          "\$20 Discount Coupon - Limited Time! Celebrating giving back to our customers. Limited to first 10 customers only!",
       },
     },
   };
 
   const text = translations[language];
 
-  // Subpage routing
   if (showContactForm)
     return (
       <ContactPage
@@ -265,6 +301,12 @@ function App() {
       />
     );
 
+  // Book Now / 立刻預約! on popup should open contact form
+  function handleBookNow() {
+    setShowBirthdayPopup(false);
+    setShowContactForm(true);
+  }
+
   return (
     <div className="app">
       <header className="app-header">
@@ -272,8 +314,7 @@ function App() {
           <div className="logo">Enchanté</div>
           <nav>
             <a href="#features">{text.nav.features}</a>
-            
-            <a href="#why-choose-us">Why Choose Us?</a>
+            <a href="#why-choose-us">{text.whyChooseUs.title}</a>
             <a
               href="#contact"
               onClick={(e) => {
@@ -334,7 +375,6 @@ function App() {
             ))}
           </div>
         </section>
-        
         <section id="why-choose-us" className="why-choose-us-section">
           <h2 className="why-choose-us-title">{text.whyChooseUs.title}</h2>
           <div className="why-choose-us-grid">
@@ -370,7 +410,10 @@ function App() {
         <section id="contact" className="contact-section">
           <h2 className="contact-title">{text.contact.title}</h2>
           <div className="contact-content">
-            <Button className="contact-button" onClick={() => setShowContactForm(true)}>
+            <Button
+              className="contact-button"
+              onClick={() => setShowContactForm(true)}
+            >
               {text.contact.button}
             </Button>
             <p className="email-info">
@@ -385,35 +428,13 @@ function App() {
           &copy; {new Date().getFullYear()} {text.footer.copyright}
         </p>
       </footer>
-
-      {/* Birthday Popup */}
       {showBirthdayPopup && (
-        <div className="birthday-popup">
-          <div className="confetti">
-            {[...Array(100)].map((_, i) => (
-              <div
-                key={i}
-                className="confetti-piece"
-                style={{
-                  "--random-x": `\${Math.random() * 100}vw`,
-                  "--random-offset": `\${Math.random() * 100}vh`,
-                  "--random-duration": `\${Math.random() * 10 + 5}s`,
-                  "--random-scale": `\${Math.random() * 0.5 + 0.5}`,
-                }}
-              />
-            ))}
-          </div>
-          <div className="popup-content">
-            <button
-              className="close-button"
-              onClick={() => setShowBirthdayPopup(false)}
-            >
-              &times;
-            </button>
-            <h2>{text.birthdayPopup.title}</h2>
-            <p>{text.birthdayPopup.message}</p>
-          </div>
-        </div>
+        <BirthdayPopup
+          onClose={() => setShowBirthdayPopup(false)}
+          language={language}
+          onBookNow={handleBookNow}
+          text={text}
+        />
       )}
     </div>
   );
