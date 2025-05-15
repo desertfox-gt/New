@@ -1,17 +1,16 @@
 
 /* Global Styles */
 body {
-  font-family: 'Open Sans', sans-serif; /* Classic, highly readable sans-serif font for body text */
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #f5f5f5; /* Light grey background */
-  color: #333; /* Dark grey text for readability */
+  background-color: #f5f5f5;
+  color: #333;
   line-height: 1.7;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden;
 }
 
-/* Import Poppins and Open Sans fonts from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;500;700&display=swap');
 
 /* App Container */
@@ -21,8 +20,8 @@ body {
 
 /* Reusable Button Component */
 .button {
-  background-color: #a8dadc; /* Soft blue */
-  color: #1d3557; /* Dark blue */
+  background-color: #a8dadc;
+  color: #1d3557;
   padding: 1rem 2rem;
   border: none;
   border-radius: 5px;
@@ -32,14 +31,14 @@ body {
 }
 
 .button:hover {
-  background-color: #457b9d; /* Darker blue on hover */
-  color: #f1faee; /* Light beige text */
+  background-color: #457b9d;
+  color: #f1faee;
 }
 
 /* Navigation */
 .app-header {
-  background-color: #fff; /* White navbar */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -49,14 +48,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 2rem; /* Increased padding */
+  padding: 1.5rem 2rem;
 }
 
 .logo {
-  font-size: 1.7rem; /* Larger logo */
+  font-size: 1.7rem;
   font-weight: 600;
-  color: #1d3557; /* Dark blue */
-  font-family: 'Poppins', sans-serif; /* Use Poppins for logo */
+  color: #1d3557;
+  font-family: 'Poppins', sans-serif;
 }
 
 nav {
@@ -65,15 +64,15 @@ nav {
 }
 
 nav a {
-  color: #457b9d; /* Medium blue for nav links */
+  color: #457b9d;
   text-decoration: none;
   margin-left: 1.5rem;
   transition: color 0.3s ease;
-  font-family: 'Open Sans', sans-serif; /* Use Open Sans for nav links */
+  font-family: 'Open Sans', sans-serif;
 }
 
 nav a:hover {
-  color: #1d3557; /* Dark blue on hover */
+  color: #1d3557;
 }
 
 .language-selector {
@@ -83,22 +82,22 @@ nav a:hover {
 .language-selector button {
   background-color: transparent;
   border: none;
-  color: #777; /* Light grey for language buttons */
+  color: #777;
   padding: 0.5rem 1rem;
   cursor: pointer;
   transition: color 0.3s ease;
-  font-family: 'Open Sans', sans-serif; /* Use Open Sans for language buttons */
+  font-family: 'Open Sans', sans-serif;
 }
 
 .language-selector button.active,
 .language-selector button:hover {
-  color: #1d3557; /* Dark blue when active */
+  color: #1d3557;
 }
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, #f1faee, #e9ecef); /* Soft beige gradient */
-  padding: 6rem 2rem; /* Increased padding */
+  background: linear-gradient(135deg, #f1faee, #e9ecef);
+  padding: 6rem 2rem;
   text-align: center;
 }
 
@@ -108,51 +107,51 @@ nav a:hover {
 }
 
 .hero-headline {
-  font-size: 3rem; /* Larger headline */
-  color: #1d3557; /* Dark blue */
+  font-size: 3rem;
+  color: #1d3557;
   margin-bottom: 1.5rem;
   font-weight: 600;
-  font-family: 'Poppins', sans-serif; /* Use Poppins for hero headline */
+  font-family: 'Poppins', sans-serif;
 }
 
 .hero-desc {
-  font-size: 1.3rem; /* Slightly larger description */
-  color: #457b9d; /* Medium blue */
+  font-size: 1.3rem;
+  color: #457b9d;
   margin-bottom: 2.5rem;
-  font-family: 'Open Sans', sans-serif; /* Use Open Sans for hero description */
+  font-family: 'Open Sans', sans-serif;
 }
 
 .hero-highlight {
   font-weight: 600;
-  color: #1d3557; /* Dark blue */
-  font-family: 'Poppins', sans-serif; /* Use Poppins for hero highlight */
+  color: #1d3557;
+  font-family: 'Poppins', sans-serif;
 }
 
 .cta-btn {
-  background-color: #e63946; /* Coral red */
-  color: #f1faee; /* Light beige */
-  padding: 1.2rem 2.5rem; /* Larger button */
+  background-color: #e63946;
+  color: #f1faee;
+  padding: 1.2rem 2.5rem;
   border-radius: 8px;
   font-size: 1.2rem;
-  font-family: 'Open Sans', sans-serif; /* Use Open Sans for CTA button */
+  font-family: 'Open Sans', sans-serif;
 }
 
 .cta-btn:hover {
-  background-color: #c21c2b; /* Darker red on hover */
+  background-color: #c21c2b;
 }
 
 /* Features Section */
 .features-section {
   padding: 5rem 2rem;
-  background-color: #f1faee; /* Light beige */
+  background-color: #f1faee;
 }
 
 .features-section h2 {
-  font-size: 2.5rem; /* Larger heading */
-  color: #1d3557; /* Dark blue */
+  font-size: 2.5rem;
+  color: #1d3557;
   text-align: center;
   margin-bottom: 2.5rem;
-  font-family: 'Poppins', sans-serif; /* Use Poppins for features section heading */
+  font-family: 'Poppins', sans-serif;
 }
 
 .features-grid {
@@ -166,49 +165,49 @@ nav a:hover {
   background-color: #fff;
   padding: 2.5rem;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Softer shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
 .feature-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12); /* More pronounced shadow */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
 }
 
 .feature-title {
   font-size: 1.7rem;
-  color: #1d3557; /* Dark blue */
+  color: #1d3557;
   margin-bottom: 1.2rem;
   font-weight: 500;
-  font-family: 'Poppins', sans-serif; /* Use Poppins for feature title */
+  font-family: 'Poppins', sans-serif;
 }
 
 .feature-price {
   font-size: 1.3rem;
-  color: #e63946; /* Coral red */
+  color: #e63946;
   margin: 1.2rem 0;
-  font-family: 'Open Sans', sans-serif; /* Use Open Sans for feature price */
+  font-family: 'Open Sans', sans-serif;
 }
 
 .feature-desc {
   font-size: 1.1rem;
-  color: #457b9d; /* Medium blue */
-  font-family: 'Open Sans', sans-serif; /* Use Open Sans for feature description */
+  color: #457b9d;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* Why Choose Us Section */
 .why-choose-us-section {
   padding: 5rem 2rem;
-  background-color: #fff; /* White */
+  background-color: #fff;
 }
 
 .why-choose-us-title {
   font-size: 2.5rem;
-  color: #1d3557; /* Dark blue */
+  color: #1d3557;
   text-align: center;
   margin-bottom: 2.5rem;
-  font-family: 'Poppins', sans-serif; /* Use Poppins for why choose us section heading */
+  font-family: 'Poppins', sans-serif;
 }
 
 .why-choose-us-grid {
@@ -219,46 +218,46 @@ nav a:hover {
 }
 
 .why-choose-us-card {
-  background-color: #f1faee; /* Light beige */
+  background-color: #f1faee;
   padding: 2.5rem;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); /* Softer shadow */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
   text-align: center;
 }
 
 .why-choose-us-card h3 {
   font-size: 1.5rem;
-  color: #1d3557; /* Dark blue */
+  color: #1d3557;
   margin-bottom: 1.2rem;
-  font-family: 'Poppins', sans-serif; /* Use Poppins for why choose us card heading */
+  font-family: 'Poppins', sans-serif;
 }
 
 .why-choose-us-card p {
   font-size: 1.1rem;
-  color: #457b9d; /* Medium blue */
-  font-family: 'Open Sans', sans-serif; /* Use Open Sans for why choose us card text */
+  color: #457b9d;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .asterisk-note {
   font-size: 0.9rem;
-  color: #6c757d; /* Grey */
+  color: #6c757d;
   margin-top: 0.5rem;
   font-style: italic;
-  font-family: 'Open Sans', sans-serif; /* Use Open Sans for asterisk note */
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* Contact Section */
 .contact-section {
   padding: 5rem 2rem;
-  background-color: #f1faee; /* Light beige */
+  background-color: #f1faee;
   text-align: center;
 }
 
 .contact-title {
   font-size: 2.5rem;
-  color: #1d3557; /* Dark blue */
+  color: #1d3557;
   margin-bottom: 2.5rem;
-  font-family: 'Poppins', sans-serif; /* Use Poppins for contact section heading */
+  font-family: 'Poppins', sans-serif;
 }
 
 .contact-content {
@@ -267,44 +266,44 @@ nav a:hover {
 }
 
 .contact-button {
-  background-color: #e63946; /* Coral red */
-  color: #f1faee; /* Light beige */
-  padding: 1.2rem 2.5rem; /* Larger button */
+  background-color: #e63946;
+  color: #f1faee;
+  padding: 1.2rem 2.5rem;
   border-radius: 8px;
   font-size: 1.2rem;
-  font-family: 'Open Sans', sans-serif; /* Use Open Sans for contact button */
+  font-family: 'Open Sans', sans-serif;
 }
 
 .contact-button:hover {
-  background-color: #c21c2b; /* Darker red on hover */
+  background-color: #c21c2b;
 }
 
 .email-info {
   font-size: 1.1rem;
-  color: #457b9d; /* Medium blue */
-  font-family: 'Open Sans', sans-serif; /* Use Open Sans for email info */
+  color: #457b9d;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .email-info a {
-  color: #e63946; /* Coral red */
+  color: #e63946;
   text-decoration: none;
   transition: color 0.3s ease;
-  font-family: 'Open Sans', sans-serif; /* Use Open Sans for email info link */
+  font-family: 'Open Sans', sans-serif;
 }
 
 .email-info a:hover {
   text-decoration: underline;
-  color: #c21c2b; /* Darker red on hover */
+  color: #c21c2b;
 }
 
 /* Footer */
 .app-footer {
-  background-color: #1d3557; /* Dark blue */
-  color: #f1faee; /* Light beige */
+  background-color: #1d3557;
+  color: #f1faee;
   text-align: center;
   padding: 1.5rem 2rem;
   font-size: 1rem;
-  font-family: 'Open Sans', sans-serif; /* Use Open Sans for footer */
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* Subpage Styles */
@@ -321,27 +320,27 @@ nav a:hover {
 }
 
 .back-button {
-  background-color: #f1faee; /* Light beige */
-  color: #457b9d; /* Medium blue */
+  background-color: #f1faee;
+  color: #457b9d;
   border: none;
   padding: 0.7rem 1.2rem;
   border-radius: 5px;
   cursor: pointer;
   margin-right: 1.2rem;
   transition: background-color 0.3s ease, color 0.3s ease;
-  font-family: 'Open Sans', sans-serif; /* Use Open Sans for back button */
+  font-family: 'Open Sans', sans-serif;
 }
 
 .back-button:hover {
-  background-color: #a8dadc; /* Soft blue on hover */
-  color: #1d3557; /* Dark blue on hover */
+  background-color: #a8dadc;
+  color: #1d3557;
 }
 
 .contact-page-header h1,
 .comparison-page-header h1 {
   font-size: 1.7rem;
-  color: #1d3557; /* Dark blue */
-  font-family: 'Poppins', sans-serif; /* Use Poppins for subpage headers */
+  color: #1d3557;
+  font-family: 'Poppins', sans-serif;
 }
 
 .contact-form-container {
@@ -352,7 +351,7 @@ nav a:hover {
   width: 100%;
   border-collapse: collapse;
   margin-top: 2.5rem;
-  font-family: 'Open Sans', sans-serif; /* Use Open Sans for comparison table */
+  font-family: 'Open Sans', sans-serif;
 }
 
 .comparison-table th,
@@ -363,14 +362,14 @@ nav a:hover {
 }
 
 .comparison-table th {
-  background-color: #e9ecef; /* Light grey */
+  background-color: #e9ecef;
   font-weight: 600;
-  color: #1d3557; /* Dark blue */
-  font-family: 'Poppins', sans-serif; /* Use Poppins for comparison table headers */
+  color: #1d3557;
+  font-family: 'Poppins', sans-serif;
 }
 
 .comparison-table tbody tr:nth-child(even) {
-  background-color: #f9f9f9; /* Lighter grey */
+  background-color: #f9f9f9;
 }
 
 /* Transitions */
@@ -420,5 +419,95 @@ button,
 /* Hover effect for the entire app */
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* Birthday Popup Styles */
+.birthday-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+}
+
+.popup-content h2 {
+  font-size: 2rem;
+  color: #e63946;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.popup-content p {
+  font-size: 1.2rem;
+  color: #457b9d;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.close-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #777;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: #e63946;
+}
+
+/* Confetti Animation */
+.confetti {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #e63946; /* Coral red */
+  top: 0;
+  left: var(--random-x);
+  transform: translateY(var(--random-offset));
+  animation: confetti-fall var(--random-duration) linear infinite;
+  animation-delay: 0s;
+  transform-origin: 0 0;
+}
+
+.confetti-piece:nth-child(even) {
+  background-color: #a8dadc; /* Soft blue */
+}
+
+.confetti-piece:nth-child(5n + 1) {
+  background-color: #f1faee; /* Light beige */
+}
+
+@keyframes confetti-fall {
+  to {
+    transform: translateY(100vh);
+  }
 }
 
