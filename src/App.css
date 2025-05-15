@@ -10,6 +10,22 @@ body {
     line-height: 1.6;
 }
 
+/* Reusable Button Component */
+.button {
+    background-color: #2E9AFE;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #1A76D2; /* Darker blue on hover */
+}
+
 /* Navigation */
 header {
     background-color: #fff; /* White navbar */
@@ -161,48 +177,50 @@ nav a:hover {
     color: #777;
 }
 
-/* Testimonials Section */
-.testimonials-section {
+/* Why Choose Us Section */
+.why-choose-us-section {
     padding: 4rem 2rem;
-    background-color: #EBF5FF; /* Light blue background */
+    background-color: #fff;
 }
 
-.testimonials-title {
+.why-choose-us-title {
     font-size: 2rem;
     color: #333;
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.testimonials-grid {
+.why-choose-us-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
 
-.testimonial-card {
-    background-color: #fff;
+.why-choose-us-card {
+    background-color: #EBF5FF; /* Light blue background */
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-.star-rating {
-    color: #FFC107; /* Gold color for stars */
-    font-size: 1.2rem;
+.why-choose-us-card h3 {
+    font-size: 1.3rem;
+    color: #2E9AFE;
     margin-bottom: 1rem;
 }
 
-.testimonial-quote {
-    font-style: italic;
+.why-choose-us-card p {
+    font-size: 1rem;
     color: #555;
-    margin-bottom: 1rem;
 }
 
-.testimonial-author {
-    font-weight: 600;
-    color: #333;
+.asterisk-note {
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: 0.5rem;
+    font-style: italic;
 }
 
 /* Contact Section */
@@ -356,8 +374,9 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .testimonials-grid {
+    .why-choose-us-grid {
         grid-template-columns: 1fr;
     }
+
 }
 
