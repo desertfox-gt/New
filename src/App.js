@@ -176,7 +176,7 @@ function App() {
       birthdayPopup: {
         title: "Happy Birthday to Us!",
         message:
-          "$20 Discount Coupon - Limited Time! Celebrating giving back to our customers. Limited to first 10 customers only!",
+          "First time customers may enjoy a $20 Discount Coupon on us! - Limited to first 10 customers only!",
       },
     },
     zh: {
