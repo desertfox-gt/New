@@ -240,7 +240,7 @@ function App() {
       birthdayPopup: {
         title: "祝我們生日快樂！",
         message:
-          "\$20 折扣券 - 限時優惠！慶祝回饋客戶。僅限前 10 位客戶！",
+          "\$20 Discount Coupon - Limited Time! Celebrating giving back to our customers. Limited to first 10 customers only!",
       },
     },
   };
