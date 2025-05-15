@@ -11,7 +11,6 @@ const Button = ({ onClick, children, className }) => (
 
 // Subpage for Google Form Contact
 function ContactPage({ language, text, onBack }) {
-  // Scroll to top on component mount
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -43,7 +42,6 @@ function ContactPage({ language, text, onBack }) {
 
 // Subpage for Service Comparison
 function ServiceComparisonPage({ language, text, onBack }) {
-  // Service comparison data per language
   const rows = [
     {
       label: language === "en" ? "Price" : "價格",
@@ -104,6 +102,17 @@ function App() {
   });
   const [showContactForm, setShowContactForm] = useState(false);
   const [showComparisonPage, setShowComparisonPage] = useState(false);
+  const [showBirthdayPopup, setShowBirthdayPopup] = useState(false);
+
+  useEffect(() => {
+    // Show birthday popup after 3 seconds
+    const timer = setTimeout(() => {
+      setShowBirthdayPopup(true);
+    }, 3000);
+
+    // Clear the timeout if the component unmounts
+    return () => clearTimeout(timer);
+  }, []);
 
   const translations = {
     en: {
@@ -164,6 +173,11 @@ function App() {
         en: "English",
         zh: "繁體中文",
       },
+      birthdayPopup: {
+        title: "Happy Birthday to Us!",
+        message:
+          "\$20 Discount Coupon - Limited Time! Celebrating giving back to our customers. Limited to first 10 customers only!",
+      },
     },
     zh: {
       nav: {
@@ -222,6 +236,11 @@ function App() {
       languageSelector: {
         en: "English",
         zh: "繁體中文",
+      },
+      birthdayPopup: {
+        title: "祝我們生日快樂！",
+        message:
+          "\$20 折扣券 - 限時優惠！慶祝回饋客戶。僅限前 10 位客戶！",
       },
     },
   };
@@ -366,6 +385,36 @@ function App() {
           &copy; {new Date().getFullYear()} {text.footer.copyright}
         </p>
       </footer>
+
+      {/* Birthday Popup */}
+      {showBirthdayPopup && (
+        <div className="birthday-popup">
+          <div className="confetti">
+            {[...Array(100)].map((_, i) => (
+              <div
+                key={i}
+                className="confetti-piece"
+                style={{
+                  "--random-x": `\${Math.random() * 100}vw`,
+                  "--random-offset": `\${Math.random() * 100}vh`,
+                  "--random-duration": `\${Math.random() * 10 + 5}s`,
+                  "--random-scale": `\${Math.random() * 0.5 + 0.5}`,
+                }}
+              />
+            ))}
+          </div>
+          <div className="popup-content">
+            <button
+              className="close-button"
+              onClick={() => setShowBirthdayPopup(false)}
+            >
+              &times;
+            </button>
+            <h2>{text.birthdayPopup.title}</h2>
+            <p>{text.birthdayPopup.message}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
