@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
 // Reusable Button Component
@@ -11,6 +11,11 @@ const Button = ({ onClick, children, className }) => (
 
 // Subpage for Google Form Contact
 function ContactPage({ language, text, onBack }) {
+  // Scroll to top on component mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="contact-page">
       <header className="contact-page-header">
