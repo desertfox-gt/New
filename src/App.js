@@ -186,7 +186,7 @@ function App() {
           title: "One-time",
           price: "HKD110/hr <strike>HKD130/hr</strike>",
           desc:
-            "Single session, no commitment. Flexible, fast, instantly available for when you need it most. *Minimum 2 hour booking",
+            "Single session, no commitment. Flexible, fast, instantly available for when you need it most.",
         },
         deepClean: {
           title: "Deep Clean",
@@ -251,7 +251,7 @@ function App() {
         oneTime: {
           title: "單次服務",
           price: "HKD110/小時 <strike>HKD130/小時</strike>",
-          desc: "單次服務，無需承諾。靈活、快速，隨時可用，為您解決燃眉之急。*最低預約時數為兩小時",
+          desc: "單次服務，無需承諾。靈活、快速，隨時可用，為您解決燃眉之急。",
         },
         deepClean: {
           title: "深度清潔",
