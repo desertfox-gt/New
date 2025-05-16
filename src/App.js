@@ -245,12 +245,12 @@ function App() {
         title: "我們的服務",
         standard: {
           title: "標準服務",
-          price: "HKD80/小時 <strike>HKD100/小時</strike>",
+          price: "HKD100/小時 <strike>HKD120/小時</strike>",
           desc: "每週或每兩週定期清潔，為您提供完美的舒適感和一致性。",
         },
         oneTime: {
           title: "單次服務",
-          price: "HKD90/小時 <strike>HKD110/小時</strike>",
+          price: "HKD110/小時 <strike>HKD130/小時</strike>",
           desc: "單次服務，無需承諾。靈活、快速，隨時可用，為您解決燃眉之急。*最低預約時數為兩小時",
         },
         deepClean: {
