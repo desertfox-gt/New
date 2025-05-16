@@ -178,13 +178,13 @@ function App() {
         title: "Our Offerings",
         standard: {
           title: "Standard",
-          price: "HKD80/hr <strike>HKD100/hr</strike>",
+          price: "HKD100/hr <strike>HKD120/hr</strike>",
           desc:
             "Recurring weekly or biweekly cleaning for perfect comfort and consistency.",
         },
         oneTime: {
           title: "One-time",
-          price: "HKD90/hr <strike>HKD110/hr</strike>",
+          price: "HKD110/hr <strike>HKD130/hr</strike>",
           desc:
             "Single session, no commitment. Flexible, fast, instantly available for when you need it most.",
         },
