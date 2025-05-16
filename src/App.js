@@ -282,7 +282,7 @@ function App() {
         button: "聯絡我們",
       },
       footer: {
-        copyright: "Enchanté by The KOC Group",
+        copyright: "安尚潔 by The KOC Group",
       },
       languageSelector: {
         en: "English",
