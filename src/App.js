@@ -179,19 +179,19 @@ function App() {
         title: "Our Offerings",
         standard: {
           title: "Standard",
-          price: "HKD120/hr",
+          price: "HKD100/hr <strike>HKD120/hr</strike>",
           desc:
             "Recurring weekly or biweekly cleaning for perfect comfort and consistency.",
         },
         oneTime: {
           title: "One-time",
-          price: "HKD130/hr",
+          price: "HKD110/hr <strike>HKD130/hr</strike>",
           desc:
             "Single session, no commitment. Flexible, fast, instantly available for when you need it most.",
         },
         deepClean: {
           title: "Deep Clean",
-          price: "HKD170/hr",
+          price: "+HKD30/hr",
           desc:
             "Intensive top-to-bottom treatment for a spotless and rejuvenated environment.",
         },
@@ -219,7 +219,7 @@ function App() {
         button: "Contact Us",
       },
       footer: {
-        copyright: "Enchanté by The KOC Group",
+        copyright: "Enchanté • Classy, Dark Purple SPA",
       },
       languageSelector: {
         en: "English",
@@ -228,7 +228,7 @@ function App() {
       birthdayPopup: {
         title: "Happy Birthday to Us!",
         message:
-          "First time customers enjoy a HKD20 Discount Coupon on us!       Quickly, limited to first 10 customers only!",
+          "HKD20 Discount Coupon - Limited Time! Celebrating giving back to our customers. Limited to first 10 customers only!",
       },
     },
     zh: {
@@ -246,17 +246,17 @@ function App() {
         title: "我們的服務",
         standard: {
           title: "標準服務",
-          price: "HKD120/小時",
+          price: "HKD100/小時 <strike>HKD120/小時</strike>",
           desc: "每週或每兩週定期清潔，為您提供完美的舒適感和一致性。",
         },
         oneTime: {
           title: "單次服務",
-          price: "HKD130/小時",
+          price: "HKD110/小時 <strike>HKD130/小時</strike>",
           desc: "單次服務，無需承諾。靈活、快速，隨時可用，為您解決燃眉之急。",
         },
         deepClean: {
           title: "深度清潔",
-          price: "HKD170/小時",
+          price: "+HKD30/小時",
           desc: "從上到下的密集處理，打造無瑕且煥然一新的環境。",
         },
       },
@@ -282,7 +282,7 @@ function App() {
         button: "聯絡我們",
       },
       footer: {
-        copyright: "安尚潔 by The KOC Group",
+        copyright: "Enchanté • 高雅，深紫色水療中心",
       },
       languageSelector: {
         en: "English",
@@ -291,7 +291,7 @@ function App() {
       birthdayPopup: {
         title: "祝我們生日快樂！",
         message:
-          "首次體驗我們服務的客戶可專享 HKD20 優惠帣。     拿拿聲啦，只限頭十位客戶！",
+          "HKD20 Discount Coupon - Limited Time! Celebrating giving back to our customers. Limited to first 10 customers only!",
       },
     },
   };
@@ -325,7 +325,7 @@ function App() {
     <div className="app">
       <header className="app-header">
         <div className="nav-content">
-          <div className="logo">Enchanté  安尚潔</div>
+          <div className="logo">Enchanté</div>
           <nav>
             <a href="#features">{text.nav.features}</a>
             <a href="#why-choose-us">{text.whyChooseUs.title}</a>
