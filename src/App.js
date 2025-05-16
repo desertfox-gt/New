@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
@@ -87,7 +86,7 @@ function ServiceComparisonPage({ language, text, onBack }) {
                 <strong>{row.label}</strong>
               </td>
               {row.values.map((cell, j) => (
-                <td key={j}>{cell}</td>
+                <td key={j} dangerouslySetInnerHTML={{ __html: cell }}></td>
               ))}
             </tr>
           ))}
@@ -179,13 +178,13 @@ function App() {
         title: "Our Offerings",
         standard: {
           title: "Standard",
-          price: "HKD100/hr <strike>HKD120/hr</strike>",
+          price: "HKD80/hr <strike>HKD100/hr</strike>",
           desc:
             "Recurring weekly or biweekly cleaning for perfect comfort and consistency.",
         },
         oneTime: {
           title: "One-time",
-          price: "HKD110/hr <strike>HKD130/hr</strike>",
+          price: "HKD90/hr <strike>HKD110/hr</strike>",
           desc:
             "Single session, no commitment. Flexible, fast, instantly available for when you need it most.",
         },
@@ -246,12 +245,12 @@ function App() {
         title: "我們的服務",
         standard: {
           title: "標準服務",
-          price: "HKD100/小時 <strike>HKD120/小時</strike>",
+          price: "HKD80/小時 <strike>HKD100/小時</strike>",
           desc: "每週或每兩週定期清潔，為您提供完美的舒適感和一致性。",
         },
         oneTime: {
           title: "單次服務",
-          price: "HKD110/小時 <strike>HKD130/小時</strike>",
+          price: "HKD90/小時 <strike>HKD110/小時</strike>",
           desc: "單次服務，無需承諾。靈活、快速，隨時可用，為您解決燃眉之急。",
         },
         deepClean: {
@@ -391,7 +390,10 @@ function App() {
                 role="button"
               >
                 <h3 className="feature-title">{text.features[type].title}</h3>
-                <p className="feature-price">{text.features[type].price}</p>
+                <p
+                  className="feature-price"
+                  dangerouslySetInnerHTML={{ __html: text.features[type].price }}
+                ></p>
                 <p className="feature-desc">{text.features[type].desc}</p>
               </div>
             ))}
@@ -465,4 +467,3 @@ function App() {
 }
 
 export default App;
-
