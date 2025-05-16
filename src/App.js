@@ -325,7 +325,7 @@ function App() {
     <div className="app">
       <header className="app-header">
         <div className="nav-content">
-          <div className="logo">Enchanté</div>
+          <div className="logo">安尚潔</div>
           <nav>
             <a href="#features">{text.nav.features}</a>
             <a href="#why-choose-us">{text.whyChooseUs.title}</a>
