@@ -3,13 +3,20 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 
 const Button = ({ onClick, children, className, style }) => (
-  <button className={`button \${className ? className : ""}`} onClick={onClick} style={style}>
+  <button
+    className={`button \${className ? className : ""}`}
+    onClick={onClick}
+    style={style}
+  >
     {children}
   </button>
 );
 
 function ContactPage({ language, text, onBack }) {
-  useEffect(() => { window.scrollTo(0, 0); }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="contact-page">
       <header className="contact-page-header">
@@ -55,6 +62,7 @@ function ServiceComparisonPage({ language, text, onBack }) {
       ],
     },
   ];
+
   return (
     <div className="comparison-page">
       <header className="comparison-page-header">
@@ -75,8 +83,12 @@ function ServiceComparisonPage({ language, text, onBack }) {
         <tbody>
           {rows.map((row, i) => (
             <tr key={i}>
-              <td><strong>{row.label}</strong></td>
-              {row.values.map((cell, j) => (<td key={j}>{cell}</td>))}
+              <td>
+                <strong>{row.label}</strong>
+              </td>
+              {row.values.map((cell, j) => (
+                <td key={j}>{cell}</td>
+              ))}
             </tr>
           ))}
         </tbody>
@@ -88,16 +100,19 @@ function ServiceComparisonPage({ language, text, onBack }) {
 function BirthdayPopup({ onClose, language, onBookNow, text }) {
   // Generate confetti only once and cache it
   const confettiPieces = Array.from({ length: 80 }, (_, i) => ({
-    left: `\${Math.random() * 97 + 1}%`,
-    delay: `\${Math.random() * 2}s`,
-    duration: `\${Math.random() * 2 + 2.6}s`,
-    backgroundColor: i % 5 === 0
-      ? "#f1faee"
-      : i % 2 === 0
-      ? "#a8dadc"
-      : "#e63946",
-    transform: `scale(\${(Math.random() * 0.6 + 0.7).toFixed(2)}) rotate(\${Math.floor(Math.random() * 360)}deg)`,
-    opacity: `\${Math.random() * 0.6 + 0.4}`
+    left: `\\${Math.random() * 97 + 1}%`,
+    delay: `\\${Math.random() * 2}s`,
+    duration: `\\${Math.random() * 2 + 2.6}s`,
+    backgroundColor:
+      i % 5 === 0
+        ? "#f1faee"
+        : i % 2 === 0
+        ? "#a8dadc"
+        : "#e63946",
+    transform: `scale(\\${(Math.random() * 0.6 + 0.7).toFixed(
+      2
+    )}) rotate(\\${Math.floor(Math.random() * 360)}deg)`,
+    opacity: `\\${Math.random() * 0.6 + 0.4}`,
   }));
 
   return (
@@ -119,7 +134,9 @@ function BirthdayPopup({ onClose, language, onBookNow, text }) {
         ))}
       </div>
       <div className="popup-content">
-        <button className="close-button" onClick={onClose} aria-label="Close">&times;</button>
+        <button className="close-button" onClick={onClose} aria-label="Close">
+          &times;
+        </button>
         <h2>{text.birthdayPopup.title}</h2>
         <p>{text.birthdayPopup.message}</p>
         <Button
@@ -156,20 +173,45 @@ function App() {
       hero: {
         headline: "Class & Comfort, Elevated",
         desc: "Experience a new standard of elegance with our premium service.",
-        highlight: "Welcome to class reimagined",
         cta: "Get Started",
       },
       features: {
         title: "Our Offerings",
-        standard: { title: "Standard", price: "HKD120/hr", desc: "Recurring weekly or biweekly cleaning for perfect comfort and consistency." },
-        oneTime: { title: "One-time", price: "HKD130/hr", desc: "Single session, no commitment. Flexible, fast, instantly available for when you need it most." },
-        deepClean: { title: "Deep Clean", price: "HKD170/hr", desc: "Intensive top-to-bottom treatment for a spotless and rejuvenated environment." },
+        standard: {
+          title: "Standard",
+          price: "HKD120/hr",
+          desc:
+            "Recurring weekly or biweekly cleaning for perfect comfort and consistency.",
+        },
+        oneTime: {
+          title: "One-time",
+          price: "HKD130/hr",
+          desc:
+            "Single session, no commitment. Flexible, fast, instantly available for when you need it most.",
+        },
+        deepClean: {
+          title: "Deep Clean",
+          price: "HKD170/hr",
+          desc:
+            "Intensive top-to-bottom treatment for a spotless and rejuvenated environment.",
+        },
       },
       whyChooseUs: {
         title: "Why Choose Us?",
-        reason1: { title: "Upfront Pricing", desc: "What you see is what you pay. No hidden fees, ever." },
-        reason2: { title: "Quality Guarantee*", desc: "Your satisfaction is our priority. Only pay if you're completely satisfied.*", asteriskNote: "*Terms and conditions apply." },
-        reason3: { title: "Referral Discounts", desc: "Get up to 25% off for referring friends and family!" },
+        reason1: {
+          title: "Upfront Pricing",
+          desc: "What you see is what you pay. No hidden fees, ever.",
+        },
+        reason2: {
+          title: "Quality Guarantee*",
+          desc:
+            "Your satisfaction is our priority. Only pay if you're completely satisfied.*",
+          asteriskNote: "*Terms and conditions apply.",
+        },
+        reason3: {
+          title: "Referral Discounts",
+          desc: "Get up to 25% off for referring friends and family!",
+        },
       },
       contact: {
         title: "Book or Contact Us",
@@ -185,7 +227,8 @@ function App() {
       },
       birthdayPopup: {
         title: "Happy Birthday to Us!",
-        message: "$20 Discount Coupon - Limited Time! Celebrating giving back to our customers. Limited to first 10 customers only!",
+        message:
+          "HKD20 Discount Coupon - Limited Time! Celebrating giving back to our customers. Limited to first 10 customers only!",
       },
     },
     zh: {
@@ -197,20 +240,41 @@ function App() {
       hero: {
         headline: "品質與舒適，臻於完美",
         desc: "體驗我們高端服務帶來的全新優雅標準。",
-        highlight: "歡迎體驗重新定義的品質",
         cta: "立即開始",
       },
       features: {
         title: "我們的服務",
-        standard: { title: "標準服務", price: "HKD120/小時", desc: "每週或每兩週定期清潔，為您提供完美的舒適感和一致性。" },
-        oneTime: { title: "單次服務", price: "HKD130/小時", desc: "單次服務，無需承諾。靈活、快速，隨時可用，為您解決燃眉之急。" },
-        deepClean: { title: "深度清潔", price: "HKD170/小時", desc: "從上到下的密集處理，打造無瑕且煥然一新的環境。" },
+        standard: {
+          title: "標準服務",
+          price: "HKD120/小時",
+          desc: "每週或每兩週定期清潔，為您提供完美的舒適感和一致性。",
+        },
+        oneTime: {
+          title: "單次服務",
+          price: "HKD130/小時",
+          desc: "單次服務，無需承諾。靈活、快速，隨時可用，為您解決燃眉之急。",
+        },
+        deepClean: {
+          title: "深度清潔",
+          price: "HKD170/小時",
+          desc: "從上到下的密集處理，打造無瑕且煥然一新的環境。",
+        },
       },
       whyChooseUs: {
         title: "為什麼選擇我們？",
-        reason1: { title: "前期定價", desc: "你看到的就是你支付的。絕無隱藏費用。" },
-        reason2: { title: "質量保證*", desc: "您的滿意是我們的首要任務。只有在您完全滿意的情況下才付款。*", asteriskNote: "*適用條款及細則。" },
-        reason3: { title: "推薦折扣", desc: "推薦朋友和家人，即可享受高達 25% 的折扣！" },
+        reason1: {
+          title: "前期定價",
+          desc: "你看到的就是你支付的。絕無隱藏費用。",
+        },
+        reason2: {
+          title: "質量保證*",
+          desc: "您的滿意是我們的首要任務。只有在您完全滿意的情況下才付款。*",
+          asteriskNote: "*適用條款及細則。",
+        },
+        reason3: {
+          title: "推薦折扣",
+          desc: "推薦朋友和家人，即可享受高達 25% 的折扣！",
+        },
       },
       contact: {
         title: "預約或聯絡我們",
@@ -226,7 +290,8 @@ function App() {
       },
       birthdayPopup: {
         title: "祝我們生日快樂！",
-        message: "$20 Discount Coupon - Limited Time! Celebrating giving back to our customers. Limited to first 10 customers only!",
+        message:
+          "HKD20 Discount Coupon - Limited Time! Celebrating giving back to our customers. Limited to first 10 customers only!",
       },
     },
   };
@@ -241,6 +306,7 @@ function App() {
         onBack={() => setShowContactForm(false)}
       />
     );
+
   if (showComparisonPage)
     return (
       <ServiceComparisonPage
@@ -249,6 +315,7 @@ function App() {
         onBack={() => setShowComparisonPage(false)}
       />
     );
+
   function handleBookNow() {
     setShowBirthdayPopup(false);
     setShowContactForm(true);
@@ -264,7 +331,7 @@ function App() {
             <a href="#why-choose-us">{text.whyChooseUs.title}</a>
             <a
               href="#contact"
-              onClick={e => {
+              onClick={(e) => {
                 e.preventDefault();
                 setShowContactForm(true);
               }}
@@ -272,10 +339,16 @@ function App() {
               {text.nav.contact}
             </a>
             <div className="language-selector">
-              <Button className={language === "en" ? "active" : ""} onClick={() => setLanguage("en")}>
+              <Button
+                className={language === "en" ? "active" : ""}
+                onClick={() => setLanguage("en")}
+              >
                 {translations.en.languageSelector.en}
               </Button>
-              <Button className={language === "zh" ? "active" : ""} onClick={() => setLanguage("zh")}>
+              <Button
+                className={language === "zh" ? "active" : ""}
+                onClick={() => setLanguage("zh")}
+              >
                 {translations.en.languageSelector.zh}
               </Button>
             </div>
@@ -287,10 +360,20 @@ function App() {
           <div className="hero-content">
             <h1 className="hero-headline">{text.hero.headline}</h1>
             <p className="hero-desc">{text.hero.desc}</p>
-            <div className="hero-highlight">{text.hero.highlight}</div>
-            <Button className="cta-btn">{text.hero.cta}</Button>
+            <Button
+              className="cta-btn"
+              onClick={() =>
+                window.open(
+                  "https://docs.google.com/forms/d/e/1FAIpQLSdOEDuvc2NnzsgTAWqwH3sAOw2dtOzxf_6G1GIqqQaXsY-bxQ/viewform",
+                  "_blank"
+                )
+              }
+            >
+              {text.hero.cta}
+            </Button>
           </div>
         </section>
+
         <section id="features" className="features-section">
           <h2>{text.features.title}</h2>
           <div className="features-grid">
@@ -301,7 +384,10 @@ function App() {
                 onClick={() => setShowComparisonPage(true)}
                 tabIndex={0}
                 aria-label={`\${text.features[type].title} card. Click for comparison.`}
-                onKeyPress={e => { if (e.key === "Enter" || e.key === " ") setShowComparisonPage(true); }}
+                onKeyPress={(e) => {
+                  if (e.key === "Enter" || e.key === " ")
+                    setShowComparisonPage(true);
+                }}
                 role="button"
               >
                 <h3 className="feature-title">{text.features[type].title}</h3>
@@ -311,33 +397,52 @@ function App() {
             ))}
           </div>
         </section>
+
         <section id="why-choose-us" className="why-choose-us-section">
           <h2 className="why-choose-us-title">{text.whyChooseUs.title}</h2>
           <div className="why-choose-us-grid">
             <div className="why-choose-us-card">
-              <h3 className="why-choose-us-title">{text.whyChooseUs.reason1.title}</h3>
-              <p className="why-choose-us-desc">{text.whyChooseUs.reason1.desc}</p>
+              <h3 className="why-choose-us-title">
+                {text.whyChooseUs.reason1.title}
+              </h3>
+              <p className="why-choose-us-desc">
+                {text.whyChooseUs.reason1.desc}
+              </p>
             </div>
             <div className="why-choose-us-card">
-              <h3 className="why-choose-us-title">{text.whyChooseUs.reason2.title}</h3>
-              <p className="why-choose-us-desc">{text.whyChooseUs.reason2.desc}</p>
-              <p className="asterisk-note">{text.whyChooseUs.reason2.asteriskNote}</p>
+              <h3 className="why-choose-us-title">
+                {text.whyChooseUs.reason2.title}
+              </h3>
+              <p className="why-choose-us-desc">
+                {text.whyChooseUs.reason2.desc}
+              </p>
+              <p className="asterisk-note">
+                {text.whyChooseUs.reason2.asteriskNote}
+              </p>
             </div>
             <div className="why-choose-us-card">
-              <h3 className="why-choose-us-title">{text.whyChooseUs.reason3.title}</h3>
-              <p className="why-choose-us-desc">{text.whyChooseUs.reason3.desc}</p>
+              <h3 className="why-choose-us-title">
+                {text.whyChooseUs.reason3.title}
+              </h3>
+              <p className="why-choose-us-desc">
+                {text.whyChooseUs.reason3.desc}
+              </p>
             </div>
           </div>
         </section>
+
         <section id="contact" className="contact-section">
           <h2 className="contact-title">{text.contact.title}</h2>
           <div className="contact-content">
-            <Button className="contact-button" onClick={() => setShowContactForm(true)}>
+            <Button
+              className="contact-button"
+              onClick={() => setShowContactForm(true)}
+            >
               {text.contact.button}
             </Button>
             <p className="email-info">
               {text.contact.orEmail}{" "}
-              <a href="mailto:studyib21@gmail.com">studyib21@gmail.com</a>
+              <a href="mailto:thekocgroup@gmail.com">thekocgroup@gmail.com</a>
             </p>
           </div>
         </section>
