@@ -219,7 +219,7 @@ function App() {
         button: "Contact Us",
       },
       footer: {
-        copyright: "Enchanté • Classy, Dark Purple SPA",
+        copyright: "Enchanté by The KOC Group",
       },
       languageSelector: {
         en: "English",
@@ -228,7 +228,7 @@ function App() {
       birthdayPopup: {
         title: "Happy Birthday to Us!",
         message:
-          "HKD20 Discount Coupon - Limited Time! Celebrating giving back to our customers. Limited to first 10 customers only!",
+          "First time customers enjoy a HKD20 Discount Coupon on us!       Quickly, limited to first 10 customers only!",
       },
     },
     zh: {
@@ -282,7 +282,7 @@ function App() {
         button: "聯絡我們",
       },
       footer: {
-        copyright: "Enchanté • 高雅，深紫色水療中心",
+        copyright: "Enchanté by The KOC Group",
       },
       languageSelector: {
         en: "English",
@@ -291,7 +291,7 @@ function App() {
       birthdayPopup: {
         title: "祝我們生日快樂！",
         message:
-          "HKD20 Discount Coupon - Limited Time! Celebrating giving back to our customers. Limited to first 10 customers only!",
+          "首次體驗我們服務的客戶可專享 HKD20 優惠帣。     拿拿聲啦，只限頭十位客戶！",
       },
     },
   };
